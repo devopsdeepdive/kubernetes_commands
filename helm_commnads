@@ -1,5 +1,12 @@
-ell
-  create      create a new chart with the given name
+To list allrepositories in local:
+helm repo list
+Helm hub
+https://artifacthub.io/
+Add the repo to cluster:
+helm repo add my-repo https://charts.bitnami.com/bitnami
+helm install my-release my-repo/nginx
+
+create      create a new chart with the given name
   dependency  manage a chart's dependencies
   env         helm client environment information
   get         download extended information of a named release
