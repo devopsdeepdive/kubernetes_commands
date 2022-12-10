@@ -23,6 +23,7 @@ kubectl get pods --show-labels
 kubectl describe pods <<pod name>>
 To get pod logs 
 kubectl logs <pod name>
+kubectl logs -f <pod-name>
 #To execute coomands in pod container
 kubectl exec -it <<pod name>> -- bash
 Copy files/directories from local to pod:
@@ -33,3 +34,16 @@ Copy file from remote pod to local
 kubectl cp my-namespace/my-pod:/tmp/foo /tmp/bar
 To delete pod:
 kubectl delete <<pod name>>
+Viewing namespaces:
+kubectl get namespace
+Create a new namespace named my-namespace
+kubectl create namespace my-namespace
+ List all of the namespaces in our cluster
+ kubectl get namespaces --show-labels
+ Setting the namespace preference
+ kubectl config set-context --current --namespace=<insert-namespace-name-here>
+ # Validate it
+kubectl config view --minify | grep namespace:
+Deleting a namespace 
+kubectl delete namespaces <insert-some-namespace-name>
+
