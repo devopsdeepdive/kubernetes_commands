@@ -1,0 +1,28 @@
+######################################### All kubernetes commands #################################################################
+## Use "kubectl api-resources" for a complete list of supported resources
+## To find all objects or resources in cluster:
+kubectl api-resources -o name
+## To get all nodes:
+kubectl get nodes
+kubectl get nodes -o wide
+kubectl get nodes --show-labels
+kubectl describe nodes <<node name>>
+## List all pods
+kubectl get pods
+## List all pods in ps output format with more information
+kubectl get pods -o wide
+To get all architecture pods:
+kubectl get pods –n kube-system –o wide
+Show labels for all pods
+kubectl get pods --show-labels
+kubectl describe pods <<pod name>>
+To get pod logs 
+kubectl logs <pod name>
+#To execute coomands in pod container
+kubectl exec -it <<pod name>> -- bash
+Copy files/directories from local to pod:
+kubectl cp <<file/folder>> <<pod name>>:/
+Copy files to particular container
+kubectl cp /tmp/foo my-pod:/tmp/bar -c my-container
+Copy file from remote pod to local
+kubectl cp my-namespace/my-pod:/tmp/foo /tmp/bar
