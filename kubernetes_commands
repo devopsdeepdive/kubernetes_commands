@@ -2,11 +2,16 @@
 ## Use "kubectl api-resources" for a complete list of supported resources
 ## To find all objects or resources in cluster:
 kubectl api-resources -o name
+# Display addresses of the master and services
+kubectl cluster-info
 ## To get all nodes:
 kubectl get nodes
 kubectl get nodes -o wide
 kubectl get nodes --show-labels
 kubectl describe nodes <<node name>>
+#  To find all api resources:
+kubectl api-resources
+kubectl api-resources --namespaced=true
 ## List all pods
 kubectl get pods
 ## List all pods in ps output format with more information
@@ -26,3 +31,5 @@ Copy files to particular container
 kubectl cp /tmp/foo my-pod:/tmp/bar -c my-container
 Copy file from remote pod to local
 kubectl cp my-namespace/my-pod:/tmp/foo /tmp/bar
+To delete pod:
+kubectl delete <<pod name>>
